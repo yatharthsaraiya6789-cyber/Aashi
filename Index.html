@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aashi ❤️</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:linear-gradient(135deg,#ffd6e8,#ffeef3);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Poppins',sans-serif;
+}
+
+.card{
+  background:white;
+  padding:40px 30px;
+  border-radius:22px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+  text-align:center;
+  width:330px;
+  position:relative;
+}
+
+.emoji{
+  font-size:60px;
+}
+
+h1{
+  font-size:20px;
+  margin:20px 0 30px;
+  color:#333;
+}
+
+.buttons{
+  position:relative;
+  height:80px;
+}
+
+button{
+  padding:12px 26px;
+  border-radius:25px;
+  border:none;
+  font-size:16px;
+  cursor:pointer;
+}
+
+#yes{
+  background:#ff4d6d;
+  color:white;
+}
+
+#no{
+  background:#eee;
+  color:#555;
+  position:absolute;
+  left:140px;
+}
+
+.note{
+  margin-top:15px;
+  font-size:12px;
+  color:#999;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="emoji">🐱❤️</div>
+  <h1>Aashi will you be my Valentine?</h1>
+
+  <div class="buttons">
+    <button id="yes" onclick="goYes()">Yes</button>
+    <button id="no">No</button>
+  </div>
+
+  <div class="note">“No” is feeling shy 🙈</div>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover", ()=>{
+  const card = document.querySelector(".card");
+  const maxX = card.offsetWidth - noBtn.offsetWidth;
+  const maxY = card.offsetHeight - noBtn.offsetHeight;
+
+  noBtn.style.left = Math.random()*maxX + "px";
+  noBtn.style.top = Math.random()*maxY + "px";
+});
+
+function goYes(){
+  window.location.href = "yay.html";
+}
+</script>
+
+</body>
+</html>
